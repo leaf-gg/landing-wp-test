@@ -1,0 +1,53 @@
+@mixin media($breakpoint) {
+    @if $breakpoint==desktop {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+  
+    @if $breakpoint==mobile {
+        @media only screen and (max-width: 1023px) {
+            @content;
+        }
+    }
+  }
+
+@mixin fontLight($size, $sizemb){
+    font-family: 'Gotham', sans-serif;
+    font-weight: $light;
+    font-size: $size;
+
+    @media(max-width: 600px){
+        font-size: $sizemb;
+    }
+}
+
+@mixin fontBook($size, $sizemb){
+    font-family: 'Gotham', sans-serif;
+    font-weight: $book;
+    font-size: $size;
+
+    @media(max-width: 600px){
+        font-size: $sizemb;
+    }
+}
+
+@mixin fontRegular($size, $sizemb){
+    font-family: 'Gotham', sans-serif;
+    font-weight: $regular;
+    font-size: $size;
+
+    @media(max-width: 600px){
+        font-size: $sizemb;
+    }
+}
+
+@mixin fontBold($size, $sizemb){
+    font-family: 'Gotham', sans-serif;
+    font-weight: $bold;
+    font-size: $size;
+    
+    @media(max-width: 600px){
+        font-size: $sizemb;
+    }
+}

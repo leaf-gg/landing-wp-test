@@ -1,0 +1,70 @@
+@import "./components/base";
+@import "./components/mixins";
+@import "./components/colors";
+@import "./components/home";
+
+.btn-posts,
+.btn-form {
+    appearance: none;
+    width: 376px;
+    height: 45px;
+    @include fontBold(14px, 14px);
+    text-transform: uppercase;
+    background: $white;
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    transition: .2s ease-in-out;
+
+    &:hover {
+        transition: .2s ease-in-out;
+        background: $red;
+        color: $white;
+
+        svg {
+            fill: $white;
+        }
+    }
+
+    @include media(mobile) {
+        width: 100%;
+    }
+}
+
+.btn-form {
+    background: $red;
+    color: $white;
+    width: 138px;
+    height: 60px;
+    margin: 0 0 0 -20px;
+
+    &:hover {
+        background: $white;
+        color: $red;
+    }
+
+    @include media(mobile) {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.btn-store{
+    background: transparent;
+    color: $white;
+    border: 2px solid $white;
+    border-radius: 2px;
+    transition: .2s ease-in-out;
+    padding: 6px 20px;
+    
+    &:hover{
+        color: rgba($red, .7);
+        background: $white;
+        transition: .2s ease-in-out;
+
+        svg{
+            fill: rgba($red, .7);
+        }
+    }
+}

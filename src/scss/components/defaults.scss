@@ -1,0 +1,43 @@
+.title-main {
+    width: auto;
+    @include fontLight(95px, 30px);
+    text-transform: uppercase;
+    font-size: 95px;
+    color: $gray-title;
+    margin-bottom: 75px;
+
+    &::after {
+        display: block;
+        content: '';
+        background: rgba(#D4142C, .4);
+        width: 250px;
+        height: 1px;
+
+        @include media(mobile) {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+    }
+
+    @include media(mobile) {
+        text-align: center;
+        padding-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+.input-news{
+    width: 320px;
+    appearance: none;
+    padding: 12px 50px 12px 30px;
+    @include fontLight(14px, 14px);
+    color: #A39D9D;
+    border: 1px solid $gray-border;
+    border-radius: 5px;
+
+    @include media(mobile){
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
