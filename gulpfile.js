@@ -4,7 +4,6 @@ const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
-const browsersync = require('browser-sync').create();
 
 // Sass Task
 function scssTask(){
@@ -22,31 +21,14 @@ function jsTask(){
     .pipe(dest('dist', { sourcemaps: '.' }));
 }
 
-// Browsersync Tasks
-function browsersyncServe(cb){
-  browsersync.init({
-    server: {
-      baseDir: '.'
-    }
-  });
-  cb();
-}
-
-function browsersyncReload(cb){
-  browsersync.reload();
-  cb();
-}
-
 // Watch Task
 function watchTask(){
-  watch('*.html', browsersyncReload);
-  watch(['src/scss/**/*.scss', 'src/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
+  watch(['src/scss/**/*.scss', 'src/js/**/*.js'], series(scssTask, jsTask));
 }
 
 // Default Gulp task
 exports.default = series(
   scssTask,
   jsTask,
-  browsersyncServe,
   watchTask
 );
